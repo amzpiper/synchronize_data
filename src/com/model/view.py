@@ -18,6 +18,7 @@ class ViewModel(object):
         self.dns64s = dns64s
         self.fail_forwarder = fail_forwarder
         self.zones = zones
+        self.zones = ""
         self.comment = comment
         self.view_id = ''.join(str(uuid.uuid1()).split('-'))
         self.zdns_view_id = ''.join(str(uuid.uuid1()).split('-'))
