@@ -43,14 +43,14 @@ class Config(object):
         # acl三层表:done
         self.acl_table_insert='''insert into acl(id,pool_id,tenant_id,name,networks) values (\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");'''
         # acl四层表
-        self.zdns_acl_info_t_table_insert='''insert into zdns_acl_info_t(id,name,networks,current_users,href,comment) values (\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");'''
+        self.zdns_acl_info_t_table_insert='''insert into zdns_acl_info_t(id,name,networks,current_users,href,`comment`) values (\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");'''
         # acl三层和四层关联关系表
         self.acl_zdns_acl_associations_table_insert='''insert into acl_zdns_acl_associations(id,acl_id,zdns_acl_id) values (\"%s\",\"%s\",\"%s\");'''
 
         # view三层表
         self.view_table_insert='''insert into view(id,pool_id,tenant_id,name) values (\"%s\",\"%s\",\"%s\",\"%s\");'''
         # view四层表
-        self.zdns_view_info_t_table_insert='''insert into zdns_view_info_t(id,name,dns64s,owners,fail_forwarder,current_users,priority,href,zones,comment) values (\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");'''
+        self.zdns_view_info_t_table_insert='''insert into zdns_view_info_t(id,name,dns64s,owners,fail_forwarder,current_users,priority,href,zones,`comment`) values (\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");'''
         # view三层和四层关联关系表
         self.view_zdns_view_associations_table_insert='''insert into view_zdns_view_associations(id,view_id,zdns_view_id) values (\"%s\",\"%s\",\"%s\");'''
         # view和acl关联关系表
