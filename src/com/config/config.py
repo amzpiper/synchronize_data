@@ -29,8 +29,9 @@ class Config(object):
         self.sqlFileName = "allSql"
 
         # pool_id，根据实际情况修改
-        self.pool_id="12345678-1234-1234-1234-1234567"
+        self.pool_id="26fa967195d1466687c090daf31b2eca"
         self.current_users="admin"
+        self.tenant_id="noauth-project"
 
         # 统计数量
         self.acl_count=0
@@ -39,89 +40,29 @@ class Config(object):
 
         # sql插入语句模板
         # acl三层表:done
-        self.acl_table_insert='''
-            insert into acl(
-                id,pool_id,tenant_id,name,networks
-                ) values(
-                    \"%s\",\"%s\",\"%s\",\"%s\",\"%s\");
-            '''
+        self.acl_table_insert='''insert into acl(id,pool_id,tenant_id,name,networks) values (\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");'''
         # acl四层表
-        self.zdns_acl_info_t_table_insert='''
-            insert into zdns_acl_info_t(
-                id,name,networks,current_users,href,comment
-                ) values(
-                    \"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");
-            
-            '''
+        self.zdns_acl_info_t_table_insert='''insert into zdns_acl_info_t(id,name,networks,current_users,href,comment) values (\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");'''
         # acl三层和四层关联关系表
-        self.acl_zdns_acl_associations_table_insert='''
-            insert into acl_zdns_acl_associations(
-                id,acl_id,zdns_acl_id
-                ) values(
-                    \"%s\",\"%s\",\"%s\");
-            '''
+        self.acl_zdns_acl_associations_table_insert='''insert into acl_zdns_acl_associations(id,acl_id,zdns_acl_id) values (\"%s\",\"%s\",\"%s\");'''
 
         # view三层表
-        self.view_table_insert='''
-            insert into view(
-                id,pool_id,tenant_id,name
-                ) values(
-                    \"%s\",\"%s\",\"%s\",\"%s\");
-            '''
+        self.view_table_insert='''insert into view(id,pool_id,tenant_id,name) values (\"%s\",\"%s\",\"%s\",\"%s\");'''
         # view四层表
-        self.zdns_view_info_t_table_insert='''
-            insert into zdns_view_info_t(
-                id,name,dns64s,owners,fail_forwarder,current_users,priority,href,zones,comment
-                ) values(
-                    \"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");
-            '''
+        self.zdns_view_info_t_table_insert='''insert into zdns_view_info_t(id,name,dns64s,owners,fail_forwarder,current_users,priority,href,zones,comment) values (\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");'''
         # view三层和四层关联关系表
-        self.view_zdns_view_associations_table_insert='''
-            insert into view_zdns_view_associations(
-                id,view_id,zdns_view_id
-                ) values(
-                    \"%s\",\"%s\",\"%s\");
-            '''
+        self.view_zdns_view_associations_table_insert='''insert into view_zdns_view_associations(id,view_id,zdns_view_id) values (\"%s\",\"%s\",\"%s\");'''
         # view和acl关联关系表
-        self.view_acl_associations_table_insert='''
-            insert into view_acl_associations(
-                id,acl_id,view_id
-                ) values(
-                    \"%s\",\"%s\",\"%s\");
-            '''
+        self.view_acl_associations_table_insert='''insert into view_acl_associations(id,acl_id,view_id) values (\"%s\",\"%s\",\"%s\");'''
 
         # zone三次表
-        self.zone_table_insert='''
-            insert into zone(
-                id,version,name,ttl,refresh,
-                retry,expire,minimum,serial,deleted,
-                status,action,pool_id,reverse_name,shard
-                ) values (
-                    \"%s\",\"%s\",\"%s\",\"%s\",\"%s\"
-                    \"%s\",\"%s\",\"%s\",\"%s\",\"%s\"
-                    \"%s\",\"%s\",\"%s\",\"%s\",\"%s\");
-            '''
+        self.zone_table_insert='''insert into zone(id,version,name,ttl,refresh,retry,expire,minimum,serial,deleted,status,action,pool_id,reverse_name,shard) values (\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");'''
         # zone三层表
-        self.zone_attributes_table_insert='''
-            insert into zone_attributes(
-                id,version,value,zone_id
-                ) values (
-                    \"%s\",\"%s\",\"%s\",\"%s\");
-            '''
+        self.zone_attributes_table_insert='''insert into zone_attributes(id,version,value,zone_id) values (\"%s\",\"%s\",\"%s\",\"%s\");'''
         # zone四层表
-        self.zdns_zones_info_t_table_insert='''
-            insert into zdns_zones_info_t(
-                id,name,default_ttl
-                ) values (
-                    \"%s\",\"%s\",\"%s\");
-            '''
+        self.zdns_zones_info_t_table_insert='''insert into zdns_zones_info_t(id,name,default_ttl) values (\"%s\",\"%s\",\"%s\");'''
         # zone关系表
-        self.zones_zdns_zone_associations_table_insert='''
-            insert into zones_zdns_zone_associations(
-                id,zone_id,zdns_zone_id
-                ) values (
-                    \"%s\",\"%s\",\"%s\");
-            '''
+        self.zones_zdns_zone_associations_table_insert='''insert into zones_zdns_zone_associations(id,zone_id,zdns_zone_id) values (\"%s\",\"%s\",\"%s\");'''
 
     # 单例模式,获取当前对象
     @classmethod    

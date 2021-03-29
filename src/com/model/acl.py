@@ -16,7 +16,6 @@ class AclModel(object):
         self.acl_id = uuid.uuid1()
         self.zdns_acl_id = uuid.uuid1()
         self.acl_zdns_acl_id = uuid.uuid1()
-        self.tenant_id = uuid.uuid1()
         self.toJsonString()
         self.toSqlString()
 
@@ -34,7 +33,7 @@ class AclModel(object):
         self.sql = self.config.acl_table_insert % (
                         self.acl_id,
                         self.config.pool_id,
-                        self.tenant_id,
+                        self.config.tenant_id,
                         self.name,
                         self.networks
                     ) + "\n" + self.config.zdns_acl_info_t_table_insert % (

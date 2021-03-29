@@ -23,7 +23,6 @@ class ViewModel(object):
         self.zdns_view_id = uuid.uuid1()
         self.view_zdns_view_id = uuid.uuid1()
         self.view_acl_id = uuid.uuid1()
-        self.tenant_id = uuid.uuid1()
         
         self.toJsonString()
         self.toSqlString(aclList)
@@ -46,7 +45,7 @@ class ViewModel(object):
         self.sql = self.config.view_table_insert % (
                         self.view_id,
                         self.config.pool_id,
-                        self.tenant_id,
+                        self.config.tenant_id,
                         self.name
                     ) + "\n" + self.config.zdns_view_info_t_table_insert % (
                         self.zdns_view_id,

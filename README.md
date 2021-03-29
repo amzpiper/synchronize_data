@@ -21,3 +21,5 @@ src >
 
 ### Bug
 1.创建模型时从json获取参数rrs时，@权威区下没有rrs字段
+2.uuid去掉-
+3.tenant_id = noauth-project

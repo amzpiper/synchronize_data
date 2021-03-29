@@ -31,7 +31,6 @@ class ZoneModel(object):
         self.action="action"
         self.reverse_name = self.name[::-1]
         self.shard="shard"
-
         self.value="value"
 
         # TODO 整理表关系，整理生成SQL关系
@@ -39,7 +38,6 @@ class ZoneModel(object):
         self.zone_attributes_id = uuid.uuid1()
         self.zdns_zones_info_id = uuid.uuid1()
         self.zones_zdns_zone_id = uuid.uuid1()
-        self.tenant_id = uuid.uuid1()
         
         self.toJsonString()
         self.toSqlString()

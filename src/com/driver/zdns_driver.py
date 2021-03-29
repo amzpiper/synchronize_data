@@ -173,7 +173,7 @@ class dns_zone_driver():
                 # response = {
                 #     "error":"null"
                 # }
-                response = json.dumps(response)
+                return response
         except Exception as e:
             print("e.message:",e)
             response = {
@@ -214,7 +214,7 @@ class dns_zone_driver():
                     "comment":""
                 }
                 time.sleep(3)
-                response = json.dumps(response)
+                return response
         except Exception as e:
             response = {
                 "error":500
@@ -335,7 +335,7 @@ class dns_zone_driver():
                     ]
                 }
                 # time.sleep(3)
-                response = json.dumps(response)
+                return response
         except Exception as e:
             print("e.message:",e)
             response = {
@@ -375,7 +375,7 @@ class dns_zone_driver():
                     "comment":""
                 }
                 time.sleep(3)
-                response = json.dumps(response)
+                return response
         except Exception as e:
             response = {
                 "error":500
@@ -431,8 +431,8 @@ class dns_zone_driver():
                         },
                     ]
                 }
-                                # time.sleep(3)
-                response = json.dumps(response)
+                # time.sleep(3)
+                return response
         except Exception as e:
             print("e.message:",e)
             response = {
@@ -470,7 +470,7 @@ class dns_zone_driver():
                 response = {
                 }
                 # time.sleep(3)
-                response = json.dumps(response)
+                return response
         except Exception as e:
             response = {
                 "error":500
@@ -531,7 +531,7 @@ class dns_zone_driver():
                     ]
                 }
                 # time.sleep(3)
-                response = json.dumps(response)
+                return response
         except Exception as e:
             print("e.message:",e)
             response = {
