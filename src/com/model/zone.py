@@ -21,12 +21,12 @@ class ZoneModel(object):
         self.slaves = slaves
         
         self.version="1"
-        self.refresh="refresh"
-        self.retry="retry"
-        self.expire="expire"
-        self.minimum="minimum"
-        self.serial="serial"
-        self.deleted="false"
+        self.refresh="3500"
+        self.retry="600"
+        self.expire="86400"
+        self.minimum="3600"
+        self.serial=round(1999999999)
+        self.deleted="0"
         self.status="ACTIVE"
         self.action="NONE"
         self.reverse_name = self.name[::-1]
