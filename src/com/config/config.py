@@ -10,8 +10,8 @@ class Config(object):
     
     def __init__(self):
         # 开发模式 prop:生产;test:测试
-        self.profile = "test"
-        # self.profile = "prop"
+        # self.profile = "test"
+        self.profile = "prop"
 
         # zdns 配置
         self.host_ip = "55.15.66.46"
@@ -24,8 +24,8 @@ class Config(object):
         self.check_network_url = "https://"+self.host_ip+":"+str(self.port)+"/acls"
 
         # 文件输出路径
-        self.sqlFilePath = "E:"
-        # self.sqlFilePath = "/home"
+        # self.sqlFilePath = "E:"
+        self.sqlFilePath = "/home"
         self.sqlFileName = "allSql"
 
         # pool_id，根据实际情况修改

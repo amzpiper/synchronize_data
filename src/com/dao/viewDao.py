@@ -31,7 +31,7 @@ class ViewDao(object):
             # print(item)
             self.viewList.append(view.ViewModel(
                 item['name'].encode('ascii'),
-                item['priority'].encode('ascii'),
+                item['priority'],
                 item['acls'],
                 item['href'].encode('ascii'),
                 ','.join(item['owners']).encode('ascii'),
