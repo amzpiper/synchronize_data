@@ -13,9 +13,9 @@ class AclModel(object):
         self.name= name
         self.networks = networks
         self.href = href
-        self.acl_id = uuid.uuid1()
-        self.zdns_acl_id = uuid.uuid1()
-        self.acl_zdns_acl_id = uuid.uuid1()
+        self.acl_id = ''.join(str(uuid.uuid1()).split('-'))
+        self.zdns_acl_id = ''.join(str(uuid.uuid1()).split('-'))
+        self.acl_zdns_acl_id = ''.join(str(uuid.uuid1()).split('-'))
         self.toJsonString()
         self.toSqlString()
 

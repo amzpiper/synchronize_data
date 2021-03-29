@@ -27,7 +27,10 @@ class AclDao(object):
 
         print("Acl is Creating Sql ...")
         for item in response['resources']:
-            self.aclList.append(acl.AclModel(item['name'],item['networks'],item['href']))
+            self.aclList.append(acl.AclModel(
+                item['name'].encode('ascii'),
+                ','.join(item['networks']).encode('ascii'),
+                item['href'].encode('ascii')))
             self.config.acl_count += 1
             print("Acl Sql is Create %s ..." % self.config.acl_count)
         print("Acl Sql is Done ...")

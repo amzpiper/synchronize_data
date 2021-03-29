@@ -30,15 +30,15 @@ class ViewDao(object):
         for item in response['resources']:
             # print(item)
             self.viewList.append(view.ViewModel(
-                item['name'],
-                item['priority'],
+                item['name'].encode('ascii'),
+                item['priority'].encode('ascii'),
                 item['acls'],
-                item['href'],
-                item['owners'],
-                item['dns64s'],
+                item['href'].encode('ascii'),
+                ','.join(item['owners']).encode('ascii'),
+                ','.join(item['dns64s']).encode('ascii'),
                 item['fail_forwarder'],
-                item['zones'],
-                item['comment'],
+                ','.join('%s' % zone for zone in item['zones']).encode('ascii'),
+                item['comment'].encode('ascii'),
                 aclList
             ))
             self.config.view_count += 1

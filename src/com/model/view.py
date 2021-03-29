@@ -19,10 +19,10 @@ class ViewModel(object):
         self.fail_forwarder = fail_forwarder
         self.zones = zones
         self.comment = comment
-        self.view_id = uuid.uuid1()
-        self.zdns_view_id = uuid.uuid1()
-        self.view_zdns_view_id = uuid.uuid1()
-        self.view_acl_id = uuid.uuid1()
+        self.view_id = ''.join(str(uuid.uuid1()).split('-'))
+        self.zdns_view_id = ''.join(str(uuid.uuid1()).split('-'))
+        self.view_zdns_view_id = ''.join(str(uuid.uuid1()).split('-'))
+        self.view_acl_id = ''.join(str(uuid.uuid1()).split('-'))
         
         self.toJsonString()
         self.toSqlString(aclList)

@@ -16,11 +16,11 @@ src >
 ```
 
 ### 运行教程
-1.修改配置文件(src\com\config\config.py)
-2.进入src目录，python main.py
+1.修改配置文件(src/com/config/config.py)
+2.运行，python src/main.py
 
 ### Bug
-1.67.创建模型时从json获取参数rrs时，@权威区下没有rrs字段
-2.tenant_id = noauth-project
-3.uuid去掉-
-4.出掉字段中的u'与[]
+1.67版本.从json获取参数rrs时失败，@权威区下没有rrs字段
+2.tenant_id = noauth-project(done)
+3.uuid去掉-(done)
+4.出掉字段中的u'与[](done)

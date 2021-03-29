@@ -10,8 +10,8 @@ class Config(object):
     
     def __init__(self):
         # 开发模式 prop:生产;test:测试
-        # self.profile = "test"
-        self.profile = "prop"
+        self.profile = "test"
+        # self.profile = "prop"
 
         # zdns 配置
         self.host_ip = "55.15.66.46"
@@ -24,12 +24,13 @@ class Config(object):
         self.check_network_url = "https://"+self.host_ip+":"+str(self.port)+"/acls"
 
         # 文件输出路径
-        # self.sqlFilePath = "E:"
-        self.sqlFilePath = "/home"
+        self.sqlFilePath = "E:"
+        # self.sqlFilePath = "/home"
         self.sqlFileName = "allSql"
 
         # pool_id，根据实际情况修改
         self.pool_id="26fa967195d1466687c090daf31b2eca"
+        self.pool_id_not_split_="36fa9671-95d1-4666-87c0-90daf31b2eca"
         self.current_users="admin"
         self.tenant_id="noauth-project"
 
@@ -58,7 +59,7 @@ class Config(object):
         # zone三次表
         self.zone_table_insert='''insert into zone(id,version,name,ttl,refresh,retry,expire,minimum,serial,deleted,status,action,pool_id,reverse_name,shard) values (\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");'''
         # zone三层表
-        self.zone_attributes_table_insert='''insert into zone_attributes(id,version,value,zone_id) values (\"%s\",\"%s\",\"%s\",\"%s\");'''
+        self.zone_attributes_table_insert='''insert into zone_attributes(id,version,key,value,zone_id) values (\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");'''
         # zone四层表
         self.zdns_zones_info_t_table_insert='''insert into zdns_zones_info_t(id,name,default_ttl) values (\"%s\",\"%s\",\"%s\");'''
         # zone关系表

@@ -20,24 +20,26 @@ class ZoneModel(object):
         self.masters = masters
         self.slaves = slaves
         
-        self.version="version"
+        self.version="1"
         self.refresh="refresh"
         self.retry="retry"
         self.expire="expire"
         self.minimum="minimum"
         self.serial="serial"
         self.deleted="false"
-        self.status="status"
-        self.action="action"
+        self.status="ACTIVE"
+        self.action="NONE"
         self.reverse_name = self.name[::-1]
-        self.shard="shard"
-        self.value="value"
+        self.shard="6"
+
+        self.key="pool_id"
+        self.value=self.config.pool_id_not_split_
 
         # TODO 整理表关系，整理生成SQL关系
-        self.zone_id = uuid.uuid1()
-        self.zone_attributes_id = uuid.uuid1()
-        self.zdns_zones_info_id = uuid.uuid1()
-        self.zones_zdns_zone_id = uuid.uuid1()
+        self.zone_id = ''.join(str(uuid.uuid1()).split('-'))
+        self.zone_attributes_id = ''.join(str(uuid.uuid1()).split('-'))
+        self.zdns_zones_info_id = ''.join(str(uuid.uuid1()).split('-'))
+        self.zones_zdns_zone_id = ''.join(str(uuid.uuid1()).split('-'))
         
         self.toJsonString()
         self.toSqlString()
@@ -57,6 +59,7 @@ class ZoneModel(object):
                     ) + "\n" + self.config.zone_attributes_table_insert % (
                         self.zone_attributes_id,
                         self.version,
+                        self.key,
                         self.value,
                         self.zone_id
                     ) + "\n" + self.config.zdns_zones_info_t_table_insert % (
