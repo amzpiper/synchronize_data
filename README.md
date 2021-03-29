@@ -1,4 +1,4 @@
-## sychronize-data 生产dns数据sql脚本
+## sychronize-data 生产api的json数据sql脚本
 
 ### 项目分层
 ```
@@ -20,6 +20,7 @@ src >
 2.进入src目录，python main.py
 
 ### Bug
-1.创建模型时从json获取参数rrs时，@权威区下没有rrs字段
-2.uuid去掉-
-3.tenant_id = noauth-project
+1.67.创建模型时从json获取参数rrs时，@权威区下没有rrs字段
+2.tenant_id = noauth-project
+3.uuid去掉-
+4.出掉字段中的u'与[]
