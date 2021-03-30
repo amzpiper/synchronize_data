@@ -18,6 +18,7 @@ src >
 ### 运行教程
 1.修改配置文件(src/com/config/config.py)
 2.运行，python src/main.py
+2.测试，python src/test.py
 
 ### Bug
 1.67版本.从json获取参数rrs时失败，@权威区下没有rrs字段
