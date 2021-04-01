@@ -11,10 +11,10 @@ class SqlOutFile(object):
 
     def writeSqlFileToPath(self,sqlList,fileName):
         # 打开一个文件
-        sqlFile = open(self.config.sqlFilePath+"/"+fileName+".sql", "w+")
-        print("Write Sql to %s" %self.config.sqlFilePath+"/"+fileName+".sql")
-        for sql in sqlList:
-            sqlFile.write(sql+"\n")
-        # 关闭打开的文件
-        sqlFile.close()
-        print("Write Sql Done. Path is %s" % self.config.sqlFilePath+"/"+fileName+".sql")
+        with open(self.config.sqlFilePath+"/"+fileName+".sql", "w+") as sqlFile:
+            print("Write Sql to %s" %self.config.sqlFilePath+"/"+fileName+".sql")
+            for sql in sqlList:
+                sqlFile.write(sql+"\n")
+            print("Write Sql Done. Path is %s" % self.config.sqlFilePath+"/"+fileName+".sql")
+            # with 不用手动关闭打开的文件
+            # sqlFile.close()
