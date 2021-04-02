@@ -1,5 +1,6 @@
 ## sychronize-data 生产api的json数据sql脚本
 
+
 ### 项目分层
 ```
 src >

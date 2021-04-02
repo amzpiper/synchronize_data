@@ -35,13 +35,15 @@ class ViewModel(object):
     """ 组合sql模板输出SQL语句 """
     def toSqlString(self,aclList):
         # 查询acls中的acl_id
-        acl_id=[]
-        
+        acl_id={}
+        acl_id[0]=""
+        acl_index=0
         for aclName in self.acls:
             for acl in aclList:
                 if acl.name == aclName:
-                    acl_id.append(acl.acl_id)
-                    # print(acl.acl_id,':',acl.name)
+                    print(acl.acl_id,':',acl.name)
+                    acl_id[acl_index]=acl.acl_id
+                    acl_index +=1
 
         self.sql = self.config.view_table_insert % (
                         self.view_id,
