@@ -1,5 +1,5 @@
 ## sychronize-data 生产api的json数据sql脚本
-
+>url:http://github.com/amzpiper/sychronize-data
 
 ### 项目分层
 ```
@@ -19,7 +19,7 @@ src >
     mainWithGUI   # 主运行程序			 (wait)
     test          # windows下测试程序 	 (done)
     test_get_zdns # 测试zdns网络是否通	    (done)
-    
+
 ```
 
 ### 运行教程
