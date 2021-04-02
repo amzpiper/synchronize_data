@@ -25,6 +25,5 @@ class Test(object):
         dnsSync = DnsSyncController()
         dnsSync.createSql()
 
-if __name__=="__main__":
-    main = Test()
-    main.test()
+main = Test()
+main.test()

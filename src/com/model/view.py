@@ -65,7 +65,7 @@ class ViewModel(object):
                         self.zdns_view_id
                     ) + "\n" + self.config.view_acl_associations_table_insert %(
                         self.view_acl_id,
-                        acl_id,
+                        acl_id[0],
                         self.view_id
                     )
 

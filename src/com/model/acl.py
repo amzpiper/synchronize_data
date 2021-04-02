@@ -48,5 +48,4 @@ class AclModel(object):
                         self.acl_id,
                         self.zdns_acl_id
                     )
-        
         return self.sql 

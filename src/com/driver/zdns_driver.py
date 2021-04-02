@@ -15,7 +15,7 @@ DNS_DRIVER = None
 class dns_zone_driver():
 
     def __init__(self):
-        self.config = Config()
+        self.config = Config().get_instance()
         self.host = 'https://' + self.config.host_ip
         self.port = self.config.port
         self.view_id = self.config.view_id
