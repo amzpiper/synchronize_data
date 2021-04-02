@@ -25,11 +25,16 @@ src >
 ### 运行教程
 1.修改配置文件(src/com/config/config.py)
 2.运行，python src/main.py
-2.测试，python src/test.py
+3.测试，python src/test.py
+4.导入sql:
+mysql -uroot -p1234
+use database
+source /home/allSql.sql
 
 ### Bug
 1.tenant_id = noauth-project(done)
 2.uuid去掉-(done)
 3.出掉字段中的u'与[](done)
 4.对和关键字相同的字段添加`符号(done)
+5.修复执行顺序依赖问题
 
